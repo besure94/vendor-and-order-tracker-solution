@@ -4,6 +4,9 @@ namespace VendorAndOrderTracker.Models
 {
   public class Order
   {
+    public Order(string title)
+    {
 
+    }
   }
 }
