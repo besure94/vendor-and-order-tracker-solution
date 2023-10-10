@@ -82,5 +82,18 @@ namespace VendorAndOrderTracker.Tests
       int result = newVendor.Id;
       Assert.AreEqual(1, result);
     }
+
+    [TestMethod]
+    public void Find_ReturnsCorrectVendor_Vendor()
+    {
+      string name01 = "Orlando's Espresso";
+      string name02 = "Carlo's Bistro";
+      string vendorDescription01 = "A coffee shop.";
+      string vendorDescription02 = "A family-owned bistro.";
+      Vendor newVendor01 = new Vendor(name01, vendorDescription01);
+      Vendor newVendor02 = new Vendor(name02, vendorDescription02);
+      Vendor result = Vendor.Find(2);
+      Assert.AreEqual(newVendor02, result);
+    }
   }
 }
