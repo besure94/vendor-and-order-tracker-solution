@@ -7,7 +7,7 @@ namespace VendorAndOrderTracker.Models
     public string OrderTitle { get; set; }
     public string OrderDescription { get; set ;}
     public int Price { get; set; }
-    public int Date { get; }
+    public int Date { get; set; }
 
     public Order(string orderTitle, string orderDescription, int price, int date)
     {

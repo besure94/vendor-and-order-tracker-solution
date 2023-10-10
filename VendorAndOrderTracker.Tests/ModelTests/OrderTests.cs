@@ -83,5 +83,16 @@ namespace VendorAndOrderTracker.Tests
       int result = newOrder.Date;
       Assert.AreEqual(date, result);
     }
+
+    [TestMethod]
+    public void SetDate_SetDate_Int()
+    {
+      int date = 10/10/2023;
+      Order newOrder = new Order("Croissant Order", "An order of 12 blueberry croissants", 25, date);
+      int newDate = 11/11/2023;
+      newOrder.Date = newDate;
+      int result = newOrder.Date;
+      Assert.AreEqual(newDate, result);
+    }
   }
 }
