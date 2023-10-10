@@ -43,5 +43,16 @@ namespace VendorAndOrderTracker.Tests
       string result = newVendor.VendorDescription;
       Assert.AreEqual(vendorDescription, result);
     }
+
+    [TestMethod]
+    public void SetVendorDescription_SetVendorDescription_String()
+    {
+      string vendorDescription = "A coffee shop.";
+      Vendor newVendor = new Vendor("Carlo's Bistro", vendorDescription);
+      string newVendorDescription = "A family-owned bistro.";
+      newVendor.VendorDescription = newVendorDescription;
+      string result = newVendor.VendorDescription;
+      Assert.AreEqual(newVendorDescription, result);
+    }
   }
 }
