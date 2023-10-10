@@ -95,5 +95,22 @@ namespace VendorAndOrderTracker.Tests
       Vendor result = Vendor.Find(2);
       Assert.AreEqual(newVendor02, result);
     }
+
+    [TestMethod]
+    public void AddOrder_AssociatesOrderWithVendor_OrderList()
+    {
+      string orderTitle = "Croissant Order";
+      string orderDescription = "An order for 12 croissants.";
+      int price = 25;
+      int date = 10/10/2023;
+      Order newOrder = new Order(orderTitle, orderDescription, price, date);
+      List<Order> newList = new List<Order> { newOrder };
+      string name = "Orlando's Espresso";
+      string vendorDescription = "A coffee shop.";
+      Vendor newVendor = new Vendor(name, vendorDescription);
+      newVendor.AddOrder(newOrder);
+      List<Order> result = newVendor.Orders;
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }

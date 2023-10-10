@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Runtime.Serialization;
+using Microsoft.Net.Http.Headers;
 
 namespace VendorAndOrderTracker.Models
 {
@@ -8,6 +10,7 @@ namespace VendorAndOrderTracker.Models
     public string VendorDescription { get; set; }
     public int Id { get; }
     private static List<Vendor> _instances = new List<Vendor> {};
+    public List<Order> Orders { get; set; }
 
     public Vendor(string name, string vendorDescription)
     {
@@ -15,6 +18,7 @@ namespace VendorAndOrderTracker.Models
       VendorDescription = vendorDescription;
       _instances.Add(this);
       Id = _instances.Count;
+      Orders = new List<Order>{};
     }
     public static List<Vendor> GetAll()
     {
@@ -28,6 +32,10 @@ namespace VendorAndOrderTracker.Models
     public static Vendor Find(int searchId)
     {
       return _instances[searchId-1];
+    }
+    public void AddOrder(Order order)
+    {
+      Orders.Add(order);
     }
   }
 }
