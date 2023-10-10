@@ -23,5 +23,16 @@ namespace VendorAndOrderTracker.Tests
       string result = newVendor.Name;
       Assert.AreEqual(name, result);
     }
+
+    [TestMethod]
+    public void SetName_SetName_String()
+    {
+      string name = "Orlando's Espresso";
+      Vendor newVendor = new Vendor(name);
+      string newName = "Ben's Bistro";
+      newVendor.Name = newName;
+      string result = newVendor.Name;
+      Assert.AreEqual(newName, result);
+    }
   }
 }
