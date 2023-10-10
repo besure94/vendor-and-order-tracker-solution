@@ -137,5 +137,22 @@ namespace VendorAndOrderTracker.Tests
       int result = newOrder.Id;
       Assert.AreEqual(1, result);
     }
+
+    [TestMethod]
+    public void Find_ReturnsCorrectOrder_Order()
+    {
+      string orderTitle01 = "Croissant Order";
+      string orderTitle02 = "Bread Order";
+      string orderDescription01 = "Order of 12 croissants.";
+      string orderDescription02 = "Order of 5 loaves of bread.";
+      int price01 = 25;
+      int price02 = 15;
+      int date01 = 10/10/2023;
+      int date02 = 11/11/2023;
+      Order newOrder01 = new Order(orderTitle01, orderDescription01, price01, date01);
+      Order newOrder02 = new Order(orderTitle02, orderDescription02, price02, date02);
+      Order result = Order.Find(2);
+      Assert.AreEqual(newOrder02, result);
+    }
   }
 }
