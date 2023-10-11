@@ -13,7 +13,7 @@
     <body>
       @using VendorAndOrderTracker.Models;
 
-      <h1>Vendor Orders</h1>
+      <h1>Vendor Orders for @Model["vendor"].Name</h1>
 
       @if (@Model["orders"].Count == 0)
       {
