@@ -16,7 +16,7 @@ namespace VendorAndOrderTracker.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-      Order newOrder = new Order("test", "test description", 25, 10/10/2023);
+      Order newOrder = new Order("test", "test description", 25, "10/10/2023");
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
@@ -24,7 +24,7 @@ namespace VendorAndOrderTracker.Tests
     public void GetTitle_ReturnsTitle_String()
     {
       string title = "Croissant Order";
-      Order newOrder = new Order(title, "An order of 12 blueberry croissants.", 25, 10/10/2023);
+      Order newOrder = new Order(title, "An order of 12 blueberry croissants.", 25, "10/10/2023");
       string result = newOrder.OrderTitle;
       Assert.AreEqual(title, result);
     }
@@ -33,7 +33,7 @@ namespace VendorAndOrderTracker.Tests
     public void SetTitle_SetTitle_String()
     {
       string title = "Croissant Order";
-      Order newOrder = new Order(title, "An order of 12 blueberry croissants.", 25, 10/10/2023);
+      Order newOrder = new Order(title, "An order of 12 blueberry croissants.", 25, "10/10/2023");
       string newTitle = "Bread Order";
       newOrder.OrderTitle = newTitle;
       string result = newOrder.OrderTitle;
@@ -44,7 +44,7 @@ namespace VendorAndOrderTracker.Tests
     public void GetDescription_ReturnsDescription_String()
     {
       string description = "An order of 12 blueberry croissants.";
-      Order newOrder = new Order("Croissant Order", description, 25, 10/10/2023);
+      Order newOrder = new Order("Croissant Order", description, 25, "10/10/2023");
       string result = newOrder.OrderDescription;
       Assert.AreEqual(description, result);
     }
@@ -53,7 +53,7 @@ namespace VendorAndOrderTracker.Tests
     public void SetDescription_SetDescription_String()
     {
       string description = "An order of 12 blueberry croissants.";
-      Order newOrder = new Order("Croissant Order", description, 25, 10/10/2023);
+      Order newOrder = new Order("Croissant Order", description, 25, "10/10/2023");
       string newDescription = "An order of 6 plain croissants.";
       newOrder.OrderDescription = newDescription;
       string result = newOrder.OrderDescription;
@@ -64,7 +64,7 @@ namespace VendorAndOrderTracker.Tests
     public void GetPrice_ReturnsPrice_Int()
     {
       int price = 25;
-      Order newOrder = new Order("Croissant Order", "An order of 12 blueberry croissants", price, 10/10/2023);
+      Order newOrder = new Order("Croissant Order", "An order of 12 blueberry croissants", price, "10/10/2023");
       int result = newOrder.Price;
       Assert.AreEqual(price, result);
     }
@@ -73,7 +73,7 @@ namespace VendorAndOrderTracker.Tests
     public void SetPrice_SetPrice_Int()
     {
       int price = 25;
-      Order newOrder = new Order("Croissant Order", "An order of 12 blueberry croissants", price, 10/10/2023);
+      Order newOrder = new Order("Croissant Order", "An order of 12 blueberry croissants", price, "10/10/2023");
       int newPrice = 30;
       newOrder.Price = newPrice;
       int result = newOrder.Price;
@@ -81,22 +81,22 @@ namespace VendorAndOrderTracker.Tests
     }
 
     [TestMethod]
-    public void GetDate_ReturnsDate_Int()
+    public void GetDate_ReturnsDate_String()
     {
-      int date = 10/10/2023;
+      string date = "10/10/2023";
       Order newOrder = new Order("Croissant Order", "An order of 12 blueberry croissants", 25, date);
-      int result = newOrder.Date;
+      string result = newOrder.Date;
       Assert.AreEqual(date, result);
     }
 
     [TestMethod]
-    public void SetDate_SetDate_Int()
+    public void SetDate_SetDate_String()
     {
-      int date = 10/10/2023;
+      string date = "10/10/2023";
       Order newOrder = new Order("Croissant Order", "An order of 12 blueberry croissants", 25, date);
-      int newDate = 11/11/2023;
+      string newDate = "11/11/2023";
       newOrder.Date = newDate;
-      int result = newOrder.Date;
+      string result = newOrder.Date;
       Assert.AreEqual(newDate, result);
     }
 
@@ -117,8 +117,8 @@ namespace VendorAndOrderTracker.Tests
       string orderDescription02 = "Order of 5 loaves of bread.";
       int price01 = 25;
       int price02 = 15;
-      int date01 = 10/10/2023;
-      int date02 = 11/11/2023;
+      string date01 = "10/10/2023";
+      string date02 = "11/11/2023";
       Order newOrder01 = new Order(orderTitle01, orderDescription01, price01, date01);
       Order newOrder02 = new Order(orderTitle02, orderDescription02, price02, date02);
       List<Order> newList = new List<Order> { newOrder01, newOrder02 };
@@ -132,7 +132,7 @@ namespace VendorAndOrderTracker.Tests
       string orderTitle = "Croissant Order";
       string orderDescription = "Order of 12 croissants.";
       int price = 25;
-      int date = 10/10/2023;
+      string date = "10/10/2023";
       Order newOrder = new Order(orderTitle, orderDescription, price, date);
       int result = newOrder.Id;
       Assert.AreEqual(1, result);
@@ -147,8 +147,8 @@ namespace VendorAndOrderTracker.Tests
       string orderDescription02 = "Order of 5 loaves of bread.";
       int price01 = 25;
       int price02 = 15;
-      int date01 = 10/10/2023;
-      int date02 = 11/11/2023;
+      string date01 = "10/10/2023";
+      string date02 = "11/11/2023";
       Order newOrder01 = new Order(orderTitle01, orderDescription01, price01, date01);
       Order newOrder02 = new Order(orderTitle02, orderDescription02, price02, date02);
       Order result = Order.Find(2);

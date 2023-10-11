@@ -102,7 +102,7 @@ namespace VendorAndOrderTracker.Tests
       string orderTitle = "Croissant Order";
       string orderDescription = "An order for 12 croissants.";
       int price = 25;
-      int date = 10/10/2023;
+      string date = "10/10/2023";
       Order newOrder = new Order(orderTitle, orderDescription, price, date);
       List<Order> newList = new List<Order> { newOrder };
       string name = "Orlando's Espresso";
