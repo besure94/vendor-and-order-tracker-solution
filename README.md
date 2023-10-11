@@ -20,8 +20,9 @@ Pierre can then select a link where he can fill out a form to create a new order
 
 1. Select the green button that says `Code`, and clone this repository to your desktop.
 2. Open your terminal and navigate to this project's production directory called `VendorAndOrderTracker`.
-3. In the command line, run the command `dotnet watch run` to launch the project in development mode with a watcher.
-4. To run tests for the `Vendor` and `Order` classes, navigate to this project's directory called `VendorAndOrderTracker.Tests`, and run the command `dotnet test` to test the classes.
+3. To run tests for the `Vendor` and `Order` classes, navigate to this project's directory called `VendorAndOrderTracker.Tests`, and run the command `dotnet test` to test the classes.
+4. In the command line, run the command `dotnet watch run` to launch the project in development mode with a watcher.
+
 
 ## Known Bugs
 
