@@ -1,6 +1,4 @@
 using System.Collections.Generic;
-using System.Runtime.Serialization;
-using Microsoft.Net.Http.Headers;
 
 namespace VendorAndOrderTracker.Models
 {
