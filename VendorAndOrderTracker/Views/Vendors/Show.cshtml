@@ -13,7 +13,12 @@
     <body>
       @using VendorAndOrderTracker.Models;
 
-      <h1>Orders by this vendor</h1>
+      <h1>Vendor Orders</h1>
+
+      @if (@Model["orders"].Count == 0)
+      {
+        <h4>No orders have been added yet.</h4>
+      }
 
       <ol>
         @foreach (Order order in @Model["orders"])
